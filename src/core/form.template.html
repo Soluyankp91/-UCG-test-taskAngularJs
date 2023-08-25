@@ -1,0 +1,152 @@
+<div>
+  <label for="userName">Username</label>
+  <input
+    type="text"
+    name="userName"
+    ng-model="user.userName"
+    required
+    user-exist
+  />
+  <span
+    class="form-error"
+    ng-if="userForm.userName.$touched && userForm.userName.$error.userExist"
+  >
+    This username is already exists!
+  </span>
+  <div class="error-container">
+    <div class="errors">
+      <div
+        class="form-error"
+        ng-if="userForm.userName.$touched && userForm.userName.$error.required"
+      >
+        This field is required
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <label for="firstName">First name</label>
+  <input type="text" name="firstName" ng-model="user.firstName" required />
+  <div class="error-container">
+    <div class="errors">
+      <div
+        class="form-error"
+        ng-if="userForm.firstName.$touched && userForm.firstName.$error.required"
+      >
+        This field is required
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <label for="lastName">Last name</label>
+  <input type="text" name="lastName" ng-model="user.lastName" required />
+  <div class="error-container">
+    <div class="errors">
+      <div
+        class="form-error"
+        ng-if="userForm.lastName.$touched && userForm.lastName.$error.required"
+      >
+        This field is required
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <label for="email">Email</label>
+  <input
+    type="email"
+    name="email"
+    ng-model="user.email"
+    ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/"
+    required
+  />
+  <div class="error-container">
+    <div class="errors">
+      <div
+        class="form-error"
+        ng-if="userForm.email.$touched && userForm.email.$error.required"
+      >
+        This field is required
+      </div>
+      <div
+        class="form-error"
+        ng-if="userForm.email.$touched && userForm.email.$error.pattern"
+      >
+        This email is not valid
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <label for="type">Type</label>
+  <select name="type" ng-model="user.type" required>
+    <option value="Admin">Admin</option>
+    <option value="Driver">Driver</option>
+  </select>
+  <div class="error-container">
+    <div class="errors">
+      <div
+        class="form-error"
+        ng-if="userForm.type.$touched && userForm.type.$error.required"
+      >
+        This field is required
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <label for="password">Password</label>
+  <input
+    name="password"
+    ng-model="user.password"
+    ng-pattern="/^(?=.*[a-zA-Z])(?=.*\d).+$/"
+    ng-min="8"
+    ng-required="true"
+    type="password"
+  />
+  <div class="error-container">
+    <div class="errors">
+      <div
+        class="form-error"
+        ng-if="userForm.password.$touched && userForm.password.$error.required"
+      >
+        This field is required
+      </div>
+      <div
+        class="form-error"
+        ng-if="userForm.password.$touched && userForm.password.$error.pattern"
+      >
+        Password should contain at least one letter and one number
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <label for="repeatPassword">Repeat password</label>
+  <input
+    name="repeatPassword"
+    ng-model="user.repeatPassword"
+    ng-pattern="/^(?=.*[a-zA-Z])(?=.*\d).+$/"
+    ng-min="8"
+    ng-required="true"
+    type="password"
+    password-match="user.password"
+  />
+  <div class="error-container">
+    <div class="errors">
+      <div
+        class="form-error"
+        ng-if="userForm.repeatPassword.$touched && userForm.repeatPassword.$error.required"
+      >
+        This field is required
+      </div>
+      <div
+        class="form-error"
+        ng-if="userForm.repeatPassword.$touched && userForm.repeatPassword.$error.passwordMatch"
+      >
+        Should match with password
+      </div>
+    </div>
+  </div>
+</div>

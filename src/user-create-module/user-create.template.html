@@ -1,0 +1,14 @@
+<div class="form-container">
+  <form name="userCreateForm" user-form>
+    <user-form form="userCreateForm" user="user"></user-form>
+  </form>
+  <div class="button-container">
+    <button
+      ng-disabled="userCreateForm.$invalid || userCreateForm.$pending"
+      ng-click="createUser()"
+      class="button-blue"
+    >
+      Create
+    </button>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="form-container">
+  <div ng-if="error">{{errorMessage}}</div>
+  <div ng-if="!error">
+    <div class="user-header">{{ user.firstName + ' ' + user.lastName}}</div>
+
+    <form name="userEditForm" user-form>
+      <user-form form="userEditForm" user="user"></user-form>
+    </form>
+    <div class="edit-buttons-container">
+      <button
+        ng-click="updateUser()"
+        ng-disabled="userEditForm.$invalid || userEditForm.$pending"
+        class="button-blue"
+      >
+        Save
+      </button>
+      <button ng-click="deleteUser()" class="button-red">Delete</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="home-container">
+  <div class="create-button-container">
+    <button class="button-blue create-button">
+      <a href="#!/home/users/create"> Create User </a>
+    </button>
+  </div>
+  <table>
+    <tbody>
+      <tr>
+        <th>USERNAME</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>EMAIL</th>
+        <th>TYPE</th>
+      </tr>
+        <tr ng-repeat="user in users">
+          <td>            
+            <a href="#!/home/users/{{user.id}}">{{ user.userName}}</a>
+        </td>
+          <td>
+            <a href="#!/home/users/{{user.id}}">{{ user.firstName}}</a>
+          </td>
+          <td>
+            <a href="#!/home/users/{{user.id}}">{{ user.lastName}}</a>
+          </td>
+          <td>
+            <a href="#!/home/users/{{user.id}}">{{ user.email}}</a>
+          </td>
+          <td>
+            <a href="#!/home/users/{{user.id}}">{{ user.type}}</a>
+          </td>
+        </tr>
+      </a>
+    </tbody>
+  </table>
+</div>
